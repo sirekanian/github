@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="GhTheme" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <!-- Window background -->
+        <item name="android:windowBackground">@color/gh_theme_background</item>
+
+        <!-- System bars -->
+        <item name="android:statusBarColor">@color/gh_status_bar_color</item>
+        <item name="android:navigationBarColor">@color/gh_navigation_bar_color</item>
+        <item name="android:windowLightStatusBar" tools:ignore="NewApi">
+            @bool/gh_window_light_status_bar
+        </item>
+        <item name="android:windowLightNavigationBar" tools:ignore="NewApi">
+            @bool/gh_window_light_navigation_bar
+        </item>
+
+        <!-- Material design theme generated using https://m3.material.io/theme-builder -->
+        <item name="colorPrimary">@color/gh_theme_primary</item>
+        <item name="colorOnPrimary">@color/gh_theme_onPrimary</item>
+        <item name="colorPrimaryContainer">@color/gh_theme_primaryContainer</item>
+        <item name="colorOnPrimaryContainer">@color/gh_theme_onPrimaryContainer</item>
+        <item name="colorSecondary">@color/gh_theme_secondary</item>
+        <item name="colorOnSecondary">@color/gh_theme_onSecondary</item>
+        <item name="colorSecondaryContainer">@color/gh_theme_secondaryContainer</item>
+        <item name="colorOnSecondaryContainer">@color/gh_theme_onSecondaryContainer</item>
+        <item name="colorTertiary">@color/gh_theme_tertiary</item>
+        <item name="colorOnTertiary">@color/gh_theme_onTertiary</item>
+        <item name="colorTertiaryContainer">@color/gh_theme_tertiaryContainer</item>
+        <item name="colorOnTertiaryContainer">@color/gh_theme_onTertiaryContainer</item>
+        <item name="colorError">@color/gh_theme_error</item>
+        <item name="colorErrorContainer">@color/gh_theme_errorContainer</item>
+        <item name="colorOnError">@color/gh_theme_onError</item>
+        <item name="colorOnErrorContainer">@color/gh_theme_onErrorContainer</item>
+        <item name="android:colorBackground">@color/gh_theme_background</item>
+        <item name="colorOnBackground">@color/gh_theme_onBackground</item>
+        <item name="colorSurface">@color/gh_theme_surface</item>
+        <item name="colorOnSurface">@color/gh_theme_onSurface</item>
+        <item name="colorSurfaceVariant">@color/gh_theme_surfaceVariant</item>
+        <item name="colorOnSurfaceVariant">@color/gh_theme_onSurfaceVariant</item>
+        <item name="colorOutline">@color/gh_theme_outline</item>
+        <item name="colorOnSurfaceInverse">@color/gh_theme_inverseOnSurface</item>
+        <item name="colorSurfaceInverse">@color/gh_theme_inverseSurface</item>
+        <item name="colorPrimaryInverse">@color/gh_theme_inversePrimary</item>
+
+    </style>
+
+</resources>

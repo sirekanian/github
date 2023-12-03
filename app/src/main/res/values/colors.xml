@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- System bars -->
+    <color name="gh_status_bar_color">#00000000</color>
+    <color name="gh_navigation_bar_color">#66000000</color>
+    <bool name="gh_window_light_status_bar">false</bool>
+    <bool name="gh_window_light_navigation_bar">false</bool>
+
+    <!-- Material design theme generated using https://m3.material.io/theme-builder -->
+    <color name="gh_theme_primary">#97CBFF</color>
+    <color name="gh_theme_onPrimary">#003353</color>
+    <color name="gh_theme_primaryContainer">#004A76</color>
+    <color name="gh_theme_onPrimaryContainer">#CEE5FF</color>
+    <color name="gh_theme_secondary">#D2BBFF</color>
+    <color name="gh_theme_onSecondary">#3F008E</color>
+    <color name="gh_theme_secondaryContainer">#571FB2</color>
+    <color name="gh_theme_onSecondaryContainer">#EADDFF</color>
+    <color name="gh_theme_tertiary">#FFB962</color>
+    <color name="gh_theme_onTertiary">#472A00</color>
+    <color name="gh_theme_tertiaryContainer">#663E00</color>
+    <color name="gh_theme_onTertiaryContainer">#FFDDB9</color>
+    <color name="gh_theme_error">#FFB4AB</color>
+    <color name="gh_theme_errorContainer">#93000A</color>
+    <color name="gh_theme_onError">#690005</color>
+    <color name="gh_theme_onErrorContainer">#FFDAD6</color>
+    <color name="gh_theme_background">#1A1C1E</color>
+    <color name="gh_theme_onBackground">#E2E2E5</color>
+    <color name="gh_theme_surface">#1A1C1E</color>
+    <color name="gh_theme_onSurface">#E2E2E5</color>
+    <color name="gh_theme_surfaceVariant">#42474E</color>
+    <color name="gh_theme_onSurfaceVariant">#C2C7CF</color>
+    <color name="gh_theme_outline">#8C9198</color>
+    <color name="gh_theme_inverseOnSurface">#1A1C1E</color>
+    <color name="gh_theme_inverseSurface">#E2E2E5</color>
+    <color name="gh_theme_inversePrimary">#00639B</color>
+    <color name="gh_theme_shadow" tools:ignore="UnusedResources">#000000</color>
+    <color name="gh_theme_surfaceTint" tools:ignore="UnusedResources">#97CBFF</color>
+    <color name="gh_theme_outlineVariant" tools:ignore="UnusedResources">#42474E</color>
+    <color name="gh_theme_scrim" tools:ignore="UnusedResources">#000000</color>
+
+</resources>
