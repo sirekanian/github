@@ -2,4 +2,7 @@
 <resources>
     <string name="gh_app_name">GitHub</string>
     <string name="gh_error_text">Error occurred</string>
+    <string name="gh_error_cannot_find_browser">Cannot find browser</string>
+    <string name="gh_error_cannot_open_link">Cannot open link</string>
+    <string name="gh_open_on_github_button">Open on GitHub</string>
 </resources>
