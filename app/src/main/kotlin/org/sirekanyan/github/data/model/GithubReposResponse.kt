@@ -1,3 +1,5 @@
 package org.sirekanyan.github.data.model
 
-class GithubReposResponse(val items: List<GithubRepo>)
+import com.google.gson.annotations.SerializedName
+
+class GithubReposResponse(@SerializedName("items") val repos: List<GithubRepo>)

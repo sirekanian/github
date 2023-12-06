@@ -10,7 +10,18 @@ class GithubRepo(
     val stars: Long,
     @SerializedName("forks_count")
     val forks: Long,
-    val language: String,
+    val language: String?,
     @SerializedName("html_url")
     val url: String,
-)
+) {
+
+    fun formattedStars(): String =
+        formatNumber(stars)
+
+    fun formattedForks(): String =
+        formatNumber(forks)
+
+    private fun formatNumber(number: Long): String =
+        if (number < 1000) "$number" else "${(number / 1000)}k"
+
+}
