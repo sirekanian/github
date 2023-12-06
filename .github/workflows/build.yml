@@ -1,6 +1,8 @@
 on:
   push:
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
   lint:
     runs-on: ubuntu-latest
