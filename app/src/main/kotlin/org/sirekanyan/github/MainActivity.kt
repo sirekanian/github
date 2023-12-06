@@ -5,6 +5,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import org.sirekanyan.github.data.model.GithubRepo
 import org.sirekanyan.github.databinding.GhMainActivityBinding
@@ -40,6 +41,7 @@ class MainActivity : AppCompatActivity(), RepoListPresenter.Router, RepoDetailsP
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        enableEdgeToEdge()
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
         onBackPressedDispatcher.addCallback(onBackPressedCallback)
