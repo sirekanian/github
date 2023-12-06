@@ -19,17 +19,8 @@ import org.sirekanyan.github.utils.showToast
 
 class MainActivity : AppCompatActivity(), RepoListPresenter.Router, RepoDetailsPresenter.Router {
 
-    private val binding by lazy { GhMainActivityBinding.inflate(layoutInflater) }
-    private val listPresenter: RepoListPresenter by lazy {
-        RepoListPresenterImpl(this, app().githubApi).also {
-            it.view = RepoListViewImpl(binding.repoListView, it)
-        }
-    }
-    private val detailsPresenter: RepoDetailsPresenter by lazy {
-        RepoDetailsPresenterImpl(this).also {
-            it.view = RepoDetailsViewImpl(binding.repoDetailsView, it)
-        }
-    }
+    private lateinit var listPresenter: RepoListPresenter
+    private lateinit var detailsPresenter: RepoDetailsPresenter
     private val onBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
             if (detailsPresenter.isShown) {
@@ -43,7 +34,14 @@ class MainActivity : AppCompatActivity(), RepoListPresenter.Router, RepoDetailsP
     override fun onCreate(savedInstanceState: Bundle?) {
         enableEdgeToEdge()
         super.onCreate(savedInstanceState)
+        val binding = GhMainActivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        listPresenter = RepoListPresenterImpl(this, app().githubApi).also {
+            it.view = RepoListViewImpl(binding.repoListView, it)
+        }
+        detailsPresenter = RepoDetailsPresenterImpl(this).also {
+            it.view = RepoDetailsViewImpl(binding.repoDetailsView, it)
+        }
         onBackPressedDispatcher.addCallback(onBackPressedCallback)
     }
 
