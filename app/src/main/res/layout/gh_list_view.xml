@@ -20,4 +20,8 @@
         app:trackColor="#00000000"
         app:trackThickness="2dp" />
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/gh_toolbar" />
+
 </FrameLayout>

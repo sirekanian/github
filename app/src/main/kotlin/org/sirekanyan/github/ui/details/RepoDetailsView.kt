@@ -29,6 +29,7 @@ class RepoDetailsViewImpl(
 
     override fun show(repo: GithubRepo) {
         binding.root.show()
+        binding.toolbar.title.text = repo.name
         binding.description.text = repo.description
         binding.stars.text = repo.formattedStars()
         binding.forks.text = repo.formattedForks()
