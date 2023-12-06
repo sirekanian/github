@@ -6,7 +6,7 @@ import org.sirekanyan.github.data.model.GithubRepo
 
 interface RepoDetailsPresenter : Presenter {
 
-    val isShown: Boolean
+    var state: GithubRepo?
     fun show(repo: GithubRepo?)
 
     interface Router {
@@ -23,8 +23,11 @@ class RepoDetailsPresenterImpl(
 
     private var repo: GithubRepo? = null
 
-    override val isShown: Boolean
-        get() = repo != null
+    override var state: GithubRepo?
+        get() = repo
+        set(value) {
+            show(value)
+        }
 
     override fun show(repo: GithubRepo?) {
         this.repo = repo

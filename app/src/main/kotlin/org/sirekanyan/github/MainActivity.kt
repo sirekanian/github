@@ -7,6 +7,7 @@ import android.os.Bundle
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.os.BundleCompat.getParcelable
 import org.sirekanyan.github.data.model.GithubRepo
 import org.sirekanyan.github.databinding.GhMainActivityBinding
 import org.sirekanyan.github.ui.details.RepoDetailsPresenter
@@ -17,16 +18,18 @@ import org.sirekanyan.github.ui.list.RepoListPresenterImpl
 import org.sirekanyan.github.ui.list.RepoListViewImpl
 import org.sirekanyan.github.utils.showToast
 
+private const val DETAILS_STATE = "org.sirekanyan.github.ui.details"
+
 class MainActivity : AppCompatActivity(), RepoListPresenter.Router, RepoDetailsPresenter.Router {
 
     private lateinit var listPresenter: RepoListPresenter
     private lateinit var detailsPresenter: RepoDetailsPresenter
     private val onBackPressedCallback = object : OnBackPressedCallback(true) {
         override fun handleOnBackPressed() {
-            if (detailsPresenter.isShown) {
-                detailsPresenter.show(repo = null)
-            } else {
+            if (detailsPresenter.state == null) {
                 finish()
+            } else {
+                detailsPresenter.show(repo = null)
             }
         }
     }
@@ -41,6 +44,9 @@ class MainActivity : AppCompatActivity(), RepoListPresenter.Router, RepoDetailsP
         }
         detailsPresenter = RepoDetailsPresenterImpl(this).also {
             it.view = RepoDetailsViewImpl(binding.repoDetailsView, it)
+            savedInstanceState?.let { state ->
+                it.state = getParcelable(state, DETAILS_STATE, GithubRepo::class.java)
+            }
         }
         onBackPressedDispatcher.addCallback(onBackPressedCallback)
     }
@@ -69,6 +75,11 @@ class MainActivity : AppCompatActivity(), RepoListPresenter.Router, RepoDetailsP
 
     override fun showDetailsScreen(repo: GithubRepo) {
         detailsPresenter.show(repo)
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putParcelable(DETAILS_STATE, detailsPresenter.state)
     }
 
 }

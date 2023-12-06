@@ -1,7 +1,10 @@
 package org.sirekanyan.github.data.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 class GithubRepo(
     val id: Long,
     val name: String,
@@ -13,7 +16,7 @@ class GithubRepo(
     val language: String?,
     @SerializedName("html_url")
     val url: String,
-) {
+) : Parcelable {
 
     fun formattedStars(): String =
         formatNumber(stars)
