@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.plugin.mpp.pm20.util.archivesName
+
 plugins {
     id("com.android.application")
     id("kotlin-android")
@@ -13,14 +15,16 @@ android {
         applicationId = "org.sirekanyan.github"
         minSdk = 21
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = (property("appVersionCode") as String).toInt()
+        versionName = property("appVersionName") as String
+        archivesName.set("$applicationId-$versionName-$versionCode")
     }
     buildTypes {
         release {
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard.pro")
+            signingConfig = signingConfigs.findByName("debug") // TODO: remove in real production
         }
     }
     compileOptions {
