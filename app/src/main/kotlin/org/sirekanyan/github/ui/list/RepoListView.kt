@@ -1,6 +1,7 @@
 package org.sirekanyan.github.ui.list
 
 import androidx.core.view.WindowInsetsCompat
+import androidx.recyclerview.widget.RecyclerView.Adapter.StateRestorationPolicy
 import org.sirekanyan.github.R
 import org.sirekanyan.github.arch.BaseView
 import org.sirekanyan.github.data.model.GithubRepo
@@ -28,7 +29,9 @@ class RepoListViewImpl(
     callbacks: RepoListView.Callbacks,
 ) : RepoListView {
 
-    private val listAdapter = RepoListAdapter(callbacks::onItemClicked)
+    private val listAdapter = RepoListAdapter(callbacks::onItemClicked).also {
+        it.stateRestorationPolicy = StateRestorationPolicy.PREVENT_WHEN_EMPTY
+    }
     private val progressView = binding.progressView
     private val recyclerView = binding.recyclerView
 
