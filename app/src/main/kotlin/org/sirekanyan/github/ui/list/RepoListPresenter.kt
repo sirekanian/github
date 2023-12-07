@@ -1,6 +1,5 @@
 package org.sirekanyan.github.ui.list
 
-import android.util.Log
 import kotlinx.coroutines.launch
 import org.sirekanyan.github.arch.BasePresenter
 import org.sirekanyan.github.arch.Presenter
@@ -31,7 +30,9 @@ class RepoListPresenterImpl(
                 val response = api.getGithubRepos(page = 1)
                 view.showRepos(response.repos)
             } catch (exception: Exception) {
-                Log.d("Github", "Cannot update list", exception)
+                // TODO: interface for logger
+                // Log.d("Github", "Cannot update list", exception)
+                exception.printStackTrace()
                 view.showError()
             } finally {
                 view.showProgress(false)
