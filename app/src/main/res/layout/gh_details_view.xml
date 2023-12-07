@@ -10,7 +10,9 @@
     android:focusable="true"
     android:orientation="vertical"
     android:visibility="gone"
-    tools:ignore="Overdraw">
+    tools:alpha="1"
+    tools:ignore="Overdraw"
+    tools:visibility="visible">
 
     <include
         android:id="@+id/toolbar"
@@ -49,22 +51,26 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="4dp"
+            android:gravity="center_vertical"
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:textColor="@color/gh_theme_secondary"
             app:drawableEndCompat="@drawable/gh_icon_fork"
-            app:drawableTint="@color/gh_theme_secondary" />
+            app:drawableTint="@color/gh_theme_secondary"
+            tools:text="10k" />
 
         <TextView
             android:id="@+id/stars"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:drawablePadding="4dp"
+            android:gravity="center_vertical"
             android:padding="8dp"
             android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
             android:textColor="@color/gh_theme_tertiary"
             app:drawableEndCompat="@drawable/gh_icon_star"
-            app:drawableTint="@color/gh_theme_tertiary" />
+            app:drawableTint="@color/gh_theme_tertiary"
+            tools:text="100k" />
 
     </LinearLayout>
 
