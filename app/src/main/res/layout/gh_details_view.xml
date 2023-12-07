@@ -4,13 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:alpha="0"
     android:background="@color/gh_theme_surface"
     android:clickable="true"
     android:focusable="true"
     android:orientation="vertical"
     android:visibility="gone"
-    tools:alpha="1"
     tools:ignore="Overdraw"
     tools:visibility="visible">
 

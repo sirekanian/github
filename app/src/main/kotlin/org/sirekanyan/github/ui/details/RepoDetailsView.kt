@@ -5,9 +5,9 @@ import org.sirekanyan.github.arch.BaseView
 import org.sirekanyan.github.data.model.GithubRepo
 import org.sirekanyan.github.databinding.GhDetailsViewBinding
 import org.sirekanyan.github.utils.applyInsets
-import org.sirekanyan.github.utils.hide
-import org.sirekanyan.github.utils.show
 import org.sirekanyan.github.utils.showText
+import org.sirekanyan.github.utils.slideIn
+import org.sirekanyan.github.utils.slideOut
 
 interface RepoDetailsView : BaseView<GhDetailsViewBinding> {
 
@@ -32,7 +32,7 @@ class RepoDetailsViewImpl(
     }
 
     override fun show(repo: GithubRepo) {
-        binding.root.show()
+        binding.root.slideIn()
         binding.toolbar.title.text = repo.name
         binding.description.text = repo.description
         binding.stars.text = repo.formattedStars()
@@ -41,7 +41,7 @@ class RepoDetailsViewImpl(
     }
 
     override fun hide() {
-        binding.root.hide()
+        binding.root.slideOut()
     }
 
 }
