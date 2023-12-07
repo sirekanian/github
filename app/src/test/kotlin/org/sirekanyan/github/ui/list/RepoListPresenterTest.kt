@@ -35,6 +35,20 @@ class RepoListPresenterTest : BaseTest() {
     }
 
     @Test
+    fun `show error when update list`() {
+        testScope.runTest {
+            `when`(api.getGithubRepos(1)).thenThrow(RuntimeException())
+            presenter.updateList()
+            moveUntilIdle()
+            inOrder(view).also {
+                it.verify(view).showProgress(true)
+                it.verify(view).showError()
+                it.verify(view).showProgress(false)
+            }
+        }
+    }
+
+    @Test
     fun `show details on item click`() {
         presenter.onItemClicked(repo)
         verify(router).showDetailsScreen(repo)
