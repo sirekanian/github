@@ -5,7 +5,6 @@ import org.sirekanyan.github.arch.BaseView
 import org.sirekanyan.github.data.model.GithubRepo
 import org.sirekanyan.github.databinding.GhDetailsViewBinding
 import org.sirekanyan.github.utils.applyInsets
-import org.sirekanyan.github.utils.showText
 import org.sirekanyan.github.utils.slideIn
 import org.sirekanyan.github.utils.slideOut
 
@@ -37,7 +36,7 @@ class RepoDetailsViewImpl(
         binding.description.text = repo.description
         binding.stars.text = repo.formattedStars()
         binding.forks.text = repo.formattedForks()
-        binding.language.showText(repo.language)
+        binding.language.text = repo.language
     }
 
     override fun hide() {

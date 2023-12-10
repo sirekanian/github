@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,83 +7,88 @@
     android:background="@color/gh_theme_surface"
     android:clickable="true"
     android:focusable="true"
-    android:orientation="vertical"
     android:visibility="gone"
     tools:ignore="Overdraw"
     tools:visibility="visible">
 
     <include
         android:id="@+id/toolbar"
-        layout="@layout/gh_toolbar" />
+        layout="@layout/gh_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:padding="16dp"
-        android:textAppearance="@style/TextAppearance.Material3.BodyLarge" />
+        android:textAppearance="@style/TextAppearance.Material3.BodyLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="description" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="8dp">
-
-        <TextView
-            android:id="@+id/language"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="4dp"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            android:textColor="@color/gh_theme_secondary" />
-
-        <Space
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        <TextView
-            android:id="@+id/forks"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="4dp"
-            android:gravity="center_vertical"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            android:textColor="@color/gh_theme_secondary"
-            app:drawableEndCompat="@drawable/gh_icon_fork"
-            app:drawableTint="@color/gh_theme_secondary"
-            tools:text="10k" />
-
-        <TextView
-            android:id="@+id/stars"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawablePadding="4dp"
-            android:gravity="center_vertical"
-            android:padding="8dp"
-            android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
-            android:textColor="@color/gh_theme_tertiary"
-            app:drawableEndCompat="@drawable/gh_icon_star"
-            app:drawableTint="@color/gh_theme_tertiary"
-            tools:text="100k" />
-
-    </LinearLayout>
-
-    <Space
+    <TextView
+        android:id="@+id/language"
         android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:padding="8dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@color/gh_theme_secondary"
+        app:layout_constraintEnd_toStartOf="@id/forks"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        tools:text="language" />
+
+    <TextView
+        android:id="@+id/forks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@color/gh_theme_secondary"
+        app:drawableEndCompat="@drawable/gh_icon_fork"
+        app:drawableTint="@color/gh_theme_secondary"
+        app:layout_constraintEnd_toStartOf="@id/stars"
+        app:layout_constraintStart_toEndOf="@id/language"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        tools:text="10k" />
+
+    <TextView
+        android:id="@+id/stars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:drawablePadding="4dp"
+        android:gravity="center_vertical"
+        android:padding="8dp"
+        android:textAppearance="@style/TextAppearance.Material3.BodyMedium"
+        android:textColor="@color/gh_theme_tertiary"
+        app:drawableEndCompat="@drawable/gh_icon_star"
+        app:drawableTint="@color/gh_theme_tertiary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/forks"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        tools:text="100k" />
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/open_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
         android:layout_margin="16dp"
         android:text="@string/gh_open_on_github_button"
-        app:icon="@drawable/gh_icon_logo" />
+        app:icon="@drawable/gh_icon_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
-</LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
