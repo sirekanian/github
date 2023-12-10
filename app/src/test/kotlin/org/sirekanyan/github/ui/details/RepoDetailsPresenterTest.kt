@@ -3,15 +3,15 @@ package org.sirekanyan.github.ui.details
 import org.junit.Test
 import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
-import org.sirekanyan.github.data.model.GithubRepo
 import org.sirekanyan.github.ui.details.RepoDetailsPresenter.Router
+import org.sirekanyan.github.utils.createGithubRepo
 
 class RepoDetailsPresenterTest {
 
     private val view = mock<RepoDetailsView>()
     private val router = mock<Router>()
     private val presenter = RepoDetailsPresenterImpl(router).also { it.view = view }
-    private val repo = GithubRepo(0, "name", "description", 0, 0, "language", "url")
+    private val repo = createGithubRepo()
 
     @Test
     fun `open web link on open click`() {

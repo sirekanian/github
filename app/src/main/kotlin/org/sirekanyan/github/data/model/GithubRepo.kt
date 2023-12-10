@@ -16,6 +16,7 @@ class GithubRepo(
     val language: String?,
     @SerializedName("html_url")
     val url: String,
+    val owner: GithubOwner,
 ) : Parcelable {
 
     fun formattedStars(): String =

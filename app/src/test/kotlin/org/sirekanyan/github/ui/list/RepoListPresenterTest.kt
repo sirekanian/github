@@ -7,10 +7,10 @@ import org.mockito.Mockito.mock
 import org.mockito.Mockito.verify
 import org.mockito.Mockito.`when`
 import org.sirekanyan.github.data.GithubApi
-import org.sirekanyan.github.data.model.GithubRepo
 import org.sirekanyan.github.data.model.GithubReposResponse
 import org.sirekanyan.github.ui.list.RepoListPresenter.Router
 import org.sirekanyan.github.utils.BaseTest
+import org.sirekanyan.github.utils.createGithubRepo
 
 class RepoListPresenterTest : BaseTest() {
 
@@ -18,7 +18,7 @@ class RepoListPresenterTest : BaseTest() {
     private val router = mock<Router>()
     private val api = mock<GithubApi>()
     private val presenter = RepoListPresenterImpl(router, api).also { it.view = view }
-    private val repo = GithubRepo(0, "name", "description", 0, 0, "language", "url")
+    private val repo = createGithubRepo()
 
     @Test
     fun `show repos when update list`() {
