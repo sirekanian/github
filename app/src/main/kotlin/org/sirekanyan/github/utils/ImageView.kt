@@ -2,7 +2,6 @@ package org.sirekanyan.github.utils
 
 import android.widget.ImageView
 import androidx.annotation.DrawableRes
-import androidx.core.content.ContextCompat
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestOptions
@@ -17,9 +16,8 @@ private val crossFadeTransitionFactory = TransitionFactory { _, _ ->
 private fun ImageView.setImage(
     url: String?,
     requestOptions: RequestOptions,
-    @DrawableRes placeholderRes: Int,
+    @DrawableRes placeholder: Int,
 ) {
-    val placeholder = ContextCompat.getDrawable(context, placeholderRes)
     Glide.with(context)
         .load(url)
         .apply(requestOptions.placeholder(placeholder))

@@ -6,10 +6,12 @@ This is a demo project to show the most popular github repositories
 
 In this project I have used
 
-- Kotlin coroutines
 - MVP architecture
+- Kotlin coroutines
 - Retrofit
+- Glide
 - RecyclerView
+- ConstraintLayout
 - Material3
 
 <picture>
